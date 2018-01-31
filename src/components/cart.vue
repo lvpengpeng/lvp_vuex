@@ -30,12 +30,15 @@
 </template>
 
 <script>
+import {mapGetters, mapActions } from 'vuex'
 export default {
   name: 'cart',
-  data() {
-    return {
-      cartProducts: [],
-    };
-  },
+      computed: {
+        ...mapGetters(['cartProducts'])
+         //页面中v-for的数据
+    },
+     methods:{
+       ...mapActions(['delProduct'])
+ }
 };
 </script>

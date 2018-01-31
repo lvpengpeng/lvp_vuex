@@ -17,7 +17,7 @@
           <td>{{shop.name}}</td>
           <td>{{shop.price}}</td>
           <td>
-            <div class="btn btn-info">购物车</div>
+            <div @click='addToCart(shop)' class="btn btn-info">购物车</div>
           </td>
         </tr>
       </tbody>
@@ -27,34 +27,20 @@
 </template>
 
 <script>
+import {mapGetters, mapActions } from 'vuex'
+ //之前引入了一个mapGetters
 export default {
   name: 'product',
-  data() {
-    return {
-      shoplist: [
-        {
-          id: 11,
-          name: '鱼香肉丝',
-          price: 12,
-        },
-        {
-          id: 22,
-          name: '宫保鸡丁',
-          price: 14,
-        },
-        {
-          id: 34,
-          name: '土豆丝',
-          price: 10,
-        },
-        {
-          id: 47,
-          name: '米饭',
-          price: 2,
-        },
-      ],
-    };
-  },
+      data() {
+      return {}
+    },
+     computed: {
+     ...mapGetters(['shoplist']
+     //这是数组['A’,’B’,...]
+     )},
+     methods: {
+  ...mapActions(['addToCart'])
+  }
 };
 </script>
 

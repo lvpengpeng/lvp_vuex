@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h3>{{msg}}</h3>
-        <!-- 商品的列表 -->g
+        <!-- 商品的列表 -->
         <product></product>
         <!-- 购物车的列表 -->
         <cart></cart>
